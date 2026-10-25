@@ -50,7 +50,8 @@ public class FishingMinigameScreen extends Screen {
     }
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+    public boolean keyPressed(net.minecraft.client.input.KeyEvent event) {
+        int keyCode = event.key();
         if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
             onClose();
             return true;
@@ -70,12 +71,12 @@ public class FishingMinigameScreen extends Screen {
             return true;
         }
 
-        return super.keyPressed(keyCode, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        this.renderBackground(graphics, mouseX, mouseY, partialTick);
+    graphics.fill(0, 0, this.width, this.height, 0x88000000);
 
         int centerX = this.width / 2;
         int centerY = this.height / 2;
@@ -96,7 +97,8 @@ public class FishingMinigameScreen extends Screen {
         int markerX = left + (int) (barWidth * marker);
         graphics.fill(markerX - 2, top - 5, markerX + 2, top + barHeight + 5, 0xFFFFFFFF);
 
-        int progressWidth = (int) (barWidth * progress);
+    
+         int progressWidth = (int) (barWidth * progress);
         graphics.fill(left, top + 30, left + progressWidth, top + 38, 0xFF42BDE8);
         graphics.drawString(this.font, "Catch progress: " + (int) (progress * 100) + "%", left, top + 43, 0xFFFFFF);
 

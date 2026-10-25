@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "fisch_minigame",
-  "version": "${version}",
+  "version": "0.1.0",
   "name": "Fisch-style Fishing Minigame",
-  "description": "A fishing minigame prototype inspired by the general gameplay loop of fishing games.",
+  "description": "A fishing minigame prototype inspired by fishing games.",
   "authors": ["pasta"],
   "license": "MIT",
   "environment": "client",
@@ -13,7 +13,7 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.18.1",
+    "fabricloader": ">=0.18.0",
     "minecraft": "~1.21.11",
     "java": ">=21",
     "fabric-api": "*"
